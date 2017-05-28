@@ -45,7 +45,7 @@ Pool和RBD快照，它们实现的基本原理都是相同的，基于对象的C
 * snap_seq / seq：快照序列号，每次做rbd snap create，monitor分配给的一个全局的序列号。
 * snapdir对象：当head对象被删除之后，系统根据snap和clone对象自动创建一个snapdir对象，来保存SnapSet信息。head对象和snapdir对象互斥，同时仅有一个存在，均可保存快照相关的信息。用于文件系统的快照实现。
 
- 1.SnapContext
+#### 2.1 SnapContext
 
 在文件src/common/snap_types.h中定义了snap相关的数据结构
 
@@ -86,7 +86,7 @@ struct librados::IoCtxImpl {
 
 在IoCtxImpl中定义的snap_seq一般叫做快照的id（snap id）。当打开一个image时，如果打开的是一个卷的快照，则snap_seq为该快照的id，否则snap_seq的值为CEPH_NOSNAP，则表明操作的是卷本身。
 
- 2.SnapSet
+#### 2.2 SnapSet
 
 在 src/osd/osd_types.h 中定义了SnapSet数据结构，用来保存Server端（OSD端）与快照相关的信息
 
@@ -121,7 +121,65 @@ SnapSet表示的信息持久化的保存在head对象的xattr扩展属性中：�
 
 ### 3. 快照的工作原理
 
+#### 3.1 快照的创建
 
+Ceph中对RBD创建一个快照的基本流程如下：
+
+1. 客户端通过类似rbd snap create这样的命令向Monitors发送创建快照请求，获取到一个最新的快照序列号 snap_seq 值。
+2. 然后将快照的 snap_name 和 snap_seq 保存到 RBD 的元数据中。
+
+RBD的元数据保存有image所有的快照名字和对应的id，创建快照操作并不会触发OSD端的数据操作，所以是秒级。
+
+#### 3.2 快照的写
+
+image做了快照进行数据的写入，会触发copy-on-write（COW）机制。下面详解COW的工作机制。
+
+写操作消息中携有SnapContext信息，包含了客户端元数据中保存的关于快照的信息，最新快照的序列号seq，以及该对象所有快照序列号的列表。在服务端，即OSD中，对象的Snap的有关信息存储在SnapSet中。写操作的处理流程按如下规则进行。
+
+* 规则 1
+
+如果写操作携带的SnapContext的seq值小于Server端Snapset的seq值，则直接返回错误。
+
+可能由于多个客户端的情景下，其他客户端创建了快照，本客户端没有获取到最新的快照序列号。
+
+Ceph有一套Watcher回调机制来实现快照序列号的更新。一个客户端对image做了快照，Server收到最新的快照序列号，会通知相应的连接客户端更新快照序列号。如果客户端没有及时更新，当写时，Server端会返回错误，此时客户端主动更新image快照的最新信息，重新发起写操作。
+
+* 规则 2
+
+如果head对象不存在，则创建该对象并写入数据，用SnapContext来更新SnapSet的信息。
+
+* 规则 3
+
+如果写请求携带的SnapContext的seq值等于SnapSet的seq值，则对head对象做正常写入。
+
+* 规则 4 （重点）
+
+如果写请求携带的snap_seq值大于Server端的SnapSet中的snap_seq值：
+
+1. copy当前对象，即clone出一个新的快照对象，该快照对象的snap序列号为写请求所携带的最新的序列号，并把clone操作记录在clones列表中。
+2. 用写请求携带的SnapContext中的seq值和snaps值来更新SnapSet中的seq和snaps。
+3. 将数据写入到head对象中。
+
+#### 3.3 快照的读
+
+读取快照数据时，输入image和快照的name，通过访问客户端中RBD的元数据，获取快照对应的id，也就是sanp_seq值。
+
+Server端，获取head的SnapSet数据。根据snaps和clones来计算所对应的正确的快照对象。
+
+#### 3.4 快照的回滚
+
+将head对象回滚到某个快照对象。操作如下：
+
+1. 删除head对象
+2. 拷贝相应的snap对象到head对象
+
+#### 3.5 快照的删除
+
+快照删除时，直接删除RBD元数据中保存的snap相关的信息，然后给Monitor发送删除信息；Monitor给相应OSD发送删除的快照序列号；然后OSD控制删除本地相对应的快照的对象。该快照是否被其他快照所共享。
+
+Ceph快照的删除是延迟删除，并非立即删除。
+
+### 4. Ceph实现快照读写的源码分析
 
 ### reference
 [1] http://docs.ceph.com/docs/hammer/rbd/rbd-snapshot/
