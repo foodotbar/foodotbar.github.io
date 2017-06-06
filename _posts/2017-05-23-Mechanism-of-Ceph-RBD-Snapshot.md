@@ -5,13 +5,14 @@ categories:
 - blog
 ---
 
-Ceph提供块存储设备，而块存储设备的使用场景中，我们离不开对块设备做快照（Snapshot）。本文将简单介绍一下Ceph中快照的基本概念，然后介绍Ceph实现快照机制所涉及的数据结构，以及Ceph快照的的工作原理及读写流程的实现。
+使用Ceph的块存储功能，为虚拟机提供块设备（卷）时，我们时不时需要对块设备（卷）打快照（Snapshot）。这里将简单介绍一下Ceph中快照的基本概念，然后介绍Ceph实现快照机制所涉及的数据结构，以及Ceph快照的的工作原理及读写流程的实现。
 
 ### 1. 快照的概念
-快照是针对块设备某一时刻全部数据的只读镜像。
-Ceph提供两种级别的快照：一种是针对Pool级别的快照，可以给整个Pool的数据做某一时刻的只读镜像；另一种是针对块设备（RBD）进行的快照。这两种快照是互斥的，不能同时共存，如果对Pool整体做了快照，就不能对该Pool中的RBD块设备做快照了。
+存储网络行业协会SNIA（StorageNetworking Industry Association）对快照（Snapshot）的定义是：关于指定数据集合的一个完全可用拷贝，该拷贝包括相应数据在某个时间点（拷贝开始的时间点）的映像。快照可以是其所表示的数据的一个副本，也可以是数据的一个复制品。
 
-Pool和RBD快照，它们实现的基本原理都是相同的，基于对象的COW（copy-on-write）机制。Ceph可以实现秒级的快照操作。
+其实Ceph提供两种级别的快照：一种是针对Pool级别的快照，可以给整个Pool的数据做某一时刻的只读镜像；另一种是针对块设备（RBD）进行的快照。这两种快照是互斥的，不能同时共存。这里暂时只讨论针对块设备的快照。
+
+无论Pool级别还是块设备级别的快照，Ceph实现的基本原理是相同的，基于对象的COW（copy-on-write）机制。Ceph可以实现秒级的快照操作。
 
 ![创建一个快照](http://docs.ceph.com/docs/master/_images/ditaa-75fdb48a3db2bad6ef749fdae1282f4ae2dd1f7c.png)
 
@@ -31,7 +32,7 @@ Pool和RBD快照，它们实现的基本原理都是相同的，基于对象的C
 2. 创建扩展镜像模板
 3. 创建镜像模板Pool
 
-虽然可以创建无限层级的快照和克隆，但是当层级过多时，对克隆image的读写时需要不断递归到parent image上读取对应的快照对象，就会影响克隆镜像的性能。因此Ceph提供了flatten操作，一次性将parent的数据拷贝给克隆image，这样就不需要向parent image查找对象数据了，从而提高性能。
+虽然可以创建无限层级的快照和克隆，但是当层级过多时，对克隆image的读写时需要不断递归到parent image上读取对应的快照对象，就会影响克隆镜像的性能。为了解决这个问题，Ceph提供了flatten操作，一次性将parent的数据拷贝给克隆image，这样就不需要向parent image查找对象数据了，从而提高性能。
 
 这里需要注意的一点是，对象的clone操作指的是快照对应的克隆操作，是RADOS在OSD服务端实现的对象拷贝。RBD的Clone操作是RBD的客户端实现的RBD层面的克隆。是两个不同的概念。
 
@@ -42,7 +43,7 @@ Pool和RBD快照，它们实现的基本原理都是相同的，基于对象的C
 
 * head对象：也就是对象的原始对象，该对象可进行写操作；
 * snap对象：对某个对象做快照之后，通过cow机制copy出来的快照对象，只读；
-* snap_seq / seq：快照序列号，每次做rbd snap create，monitor分配给的一个全局的序列号。
+* snap_seq / seq：快照序列号，每次做rbd snap create，monitor分配给的一个全局的序列号；
 * snapdir对象：当head对象被删除之后，系统根据snap和clone对象自动创建一个snapdir对象，来保存SnapSet信息。head对象和snapdir对象互斥，同时仅有一个存在，均可保存快照相关的信息。用于文件系统的快照实现。
 
 #### 2.1 SnapContext
@@ -110,7 +111,7 @@ struct SnapSet {
 * seq：表示最新的快照的序列号
 * head_exists：表示head对象是否存在
 * snaps：保存所有快照的序列号，降序排列
-* clones：表示对应快照（序列号）操作后需要拷贝的对象的记录 **{由于不是每次快照后，都需要进行对象的拷贝。只有当快照后有写操作，才会触发对相应对象的clone，也就是COW，复制出一份新的对象，然后再对对象进行写操作，该对象是clone出来的，其对象的快照序列号记录在clones队列中，称为clone对象}**
+* clones：表示对应快照（序列号）操作后需要拷贝的对象的记录 **{由于不是每次快照后，都需要进行对象的拷贝。只有当快照后有写操作（严格来说是第一次写），才会触发对相应对象的clone，也就是COW，复制出一份新的对象，然后再对对象进行写操作，该对象是clone出来的，其对象的快照序列号记录在clones队列中，称为clone对象}**
 * clone_overlap：为每个做过clone动作的快照，记录在其clone数据对象后，原数据对象上未写过的数据部分，是采用offset~len的方式进行记录的
 * clone_size：保存每次clone后的对象的size，因为有的对象一开始并不是默认的对象大小，比如默认对象大小是4MB，但是一个对象一开始只写了前2MB，所以在做完快照后进行新的写入前，这个对象就是2MB大小
 
@@ -180,6 +181,8 @@ Server端，获取head的SnapSet数据。根据snaps和clones来计算所对应�
 Ceph快照的删除是延迟删除，并非立即删除。
 
 ### 4. Ceph实现快照读写的源码分析
+
+to be continued
 
 ### reference
 [1] http://docs.ceph.com/docs/hammer/rbd/rbd-snapshot/
