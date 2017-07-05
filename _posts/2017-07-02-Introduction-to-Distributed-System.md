@@ -5,8 +5,7 @@ categories:
 - blog
 ---
 
-# awesome-distributed-systems
-A curated list of awesome distributed systems books, papers, resources and shiny things.
+# notes on distributed system 
 
 ## Bootcamp
 * [FLP Impossibility](https://groups.csail.mit.edu/tds/papers/Lynch/jacm85.pdf), Impossibility of Distributed Consensus with One Faulty Process
