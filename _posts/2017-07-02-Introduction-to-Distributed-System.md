@@ -9,6 +9,7 @@ categories:
 A curated list of awesome distributed systems books, papers, resources and shiny things.
 
 ## Bootcamp
+* [FLP Impossibility](https://groups.csail.mit.edu/tds/papers/Lynch/jacm85.pdf), Impossibility of Distributed Consensus with One Faulty Process
 * [CAP Theorem](http://en.wikipedia.org/wiki/CAP_theorem)
 * [Fallacies of Distributed Computing](https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing)
 * [Distributed systems theory for the distributed engineer](http://the-paper-trail.org/blog/distributed-systems-theory-for-the-distributed-systems-engineer/)   
@@ -22,10 +23,10 @@ Chinese version: [面向分布式系统工程师的分布式系统理论](http:/
 
 ## Courses
 * [Cloud Computing Concepts](https://class.coursera.org/cloudcomputing-001), University of Illinois
-* [CMU: Distributed Systems](http://www.cs.cmu.edu/%7Edga/15-440/F12/syllabus.html) in Go Programming Language
-* [Principles of Distributed Computing](http://dcg.ethz.ch/lectures/podc_allstars/)
-* [Distributed Systems Fall 2015](http://www.andrew.cmu.edu/course/95-702/)
-* [Distributed Systems - MIT](http://nil.csail.mit.edu/6.824/2015/)
+* [Distributed Systems - CMU fall2016](http://www.cs.cmu.edu/~srini/15-440/syllabus.html) in Go Programming Language
+* [Principles of Distributed Computing - ETHZ](http://dcg.ethz.ch/lectures/podc_allstars/)
+* [Distributed Systems for Information Systems Management - CMU](http://www.andrew.cmu.edu/course/95-702/)
+* [Distributed Systems - MIT](http://nil.csail.mit.edu/6.824/2017/)
 * [Introduction to Distributed System Design - Google Code University](http://www.hpcs.cs.tsukuba.ac.jp/%7Etatebe/lecture/h23/dsys/dsd-tutorial.html)
 
 ## Papers
@@ -48,8 +49,7 @@ Chinese version: [面向分布式系统工程师的分布式系统理论](http:/
 ### Resource Management
 * [Apache Hadoop YARN: Yet Another Resource Negotiator](https://www.sics.se/~amir/files/download/dic/2013%20-%20Apache%20Hadoop%20YARN:%20Yet%20Another%20Resource%20Negotiator%20\(SoCC\).pdf)
 * [Mesos: A Platform for Fine-Grained Resource Sharing in the Data Centeri](https://www.cs.berkeley.edu/~alig/papers/mesos.pdf)
-* [Kubernetes/Borg](https://pdos.csail.mit.edu/6.824/papers/borg.pdf)
-
+* [Borg](https://pdos.csail.mit.edu/6.824/papers/borg.pdf), [Kubernetes](https://kubernetes.io/) an open-source implementation of Borg by [Google](http://queue.acm.org/detail.cfm?id=2898444)
 ### Data Processing
 * [MapReduce: Simplified Data Processing on Large Clusters](https://static.googleusercontent.com/media/research.google.com/zh-CN//archive/mapreduce-osdi04.pdf)
 * [Pregel: A System for Large-Scale Graph Processing](http://www.dcs.bbk.ac.uk/~dell/teaching/cc/paper/sigmod10/p135-malewicz.pdf)
