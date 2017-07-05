@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Introduction to Distributed System
+title: Notes on Distributed System
 categories:
 - blog
 ---
