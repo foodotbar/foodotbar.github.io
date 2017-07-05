@@ -47,8 +47,8 @@ Chinese version: [面向分布式系统工程师的分布式系统理论](http:/
 
 ### Resource Management
 * [Apache Hadoop YARN: Yet Another Resource Negotiator](https://www.sics.se/~amir/files/download/dic/2013%20-%20Apache%20Hadoop%20YARN:%20Yet%20Another%20Resource%20Negotiator%20\(SoCC\).pdf)
-* [Mesos: A Platform for Fine-Grained Resource Sharing in the Data Center
-](https://www.cs.berkeley.edu/~alig/papers/mesos.pdf)
+* [Mesos: A Platform for Fine-Grained Resource Sharing in the Data Centeri](https://www.cs.berkeley.edu/~alig/papers/mesos.pdf)
+* [Kubernetes/Borg](https://pdos.csail.mit.edu/6.824/papers/borg.pdf)
 
 ### Data Processing
 * [MapReduce: Simplified Data Processing on Large Clusters](https://static.googleusercontent.com/media/research.google.com/zh-CN//archive/mapreduce-osdi04.pdf)
@@ -62,13 +62,19 @@ Chinese version: [面向分布式系统工程师的分布式系统理论](http:/
 Chinese version [日志：每个软件工程师都应该知道的有关实时数据的统一概念](http://www.oschina.net/translate/log-what-every-software-engineer-should-know-about-real-time-datas-unifying?lang=chs&page=1#)
 * [Kafka: a Distributed Messaging System for Log Processin](http://notes.stephenholiday.com/Kafka.pdf)
 
-### Distributed Consensus
+### Distributed Consensus Algorithms
 * [The Part Time Parliament](http://research.microsoft.com/en-us/um/people/lamport/pubs/lamport-paxos.pdf), Lamport's original Paxos paper, but it's a bit difficult to understand.
 * [Paxos Made Simple](http://research.microsoft.com/en-us/um/people/lamport/pubs/paxos-simple.pdf), a more terse readable Paxos paper by Lamport himself.
 * [The Chubby Lock Service for loosely coupled distributed systems](http://static.googleusercontent.com/media/research.google.com/en//archive/chubby-osdi06.pdf)
 * [Paxos made live - An engineering perspective](http://research.google.com/archive/paxos_made_live.html)
 * [Raft Consensus Algorithm](https://raftconsensus.github.io/)
 * [Paxos vs Raft](https://ramcloud.stanford.edu/%7Eongaro/userstudy/)
+
+### Service Discovery
+* [ZooKeeper](http://zookeeper.apache.org/)
+* [Eureka!](https://github.com/Netflix/eureka)
+* [Consul](https://www.consul.io/)
+* [etcd](https://github.com/coreos/etcd)
 
 ### Others
 * [Time, Clocks, and the Ordering of Events in a Distributed System](http://research.microsoft.com/en-us/um/people/lamport/pubs/time-clocks.pdf)
@@ -79,3 +85,4 @@ Chinese version [日志：每个软件工程师都应该知道的有关实时数
 
 ## reference
 * [awesome-distributed-systems](https://github.com/kevinxhuang/awesome-distributed-systems)
+* [service-discovery](https://technologyconversations.com/2015/09/08/service-discovery-zookeeper-vs-etcd-vs-consul/)
