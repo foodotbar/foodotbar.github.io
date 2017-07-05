@@ -76,8 +76,21 @@ Chinese version [日志：每个软件工程师都应该知道的有关实时数
 * [Consul](https://www.consul.io/)
 * [etcd](https://github.com/coreos/etcd)
 
-### Others
+### Consistency and Ordering in Distributed Systems
 * [Time, Clocks, and the Ordering of Events in a Distributed System](http://research.microsoft.com/en-us/um/people/lamport/pubs/time-clocks.pdf)
+* [The Byzantine Generals Problem](https://www.microsoft.com/en-us/research/publication/byzantine-generals-problem/)
+
+### Distributed Hash Tables
+* [Consistent hashing and random trees](https://www.akamai.com/es/es/multimedia/documents/technical-publication/consistent-hashing-and-random-trees-distributed-caching-protocols-for-relieving-hot-spots-on-the-world-wide-web-technical-publication.pdf)
+* [Web caching with consistent hashing](http://www.cs.columbia.edu/~asherman/papers/cachePaper.pdf)
+* [Chord](https://github.com/sit/dht/wiki)
+* [Pastry](http://rowstron.azurewebsites.net/PAST/pastry.pdf)
+* [Tapestry](https://pdos.csail.mit.edu/~strib/docs/tapestry/tapestry_jsac03.pdf)
+
+### Replication in Distributed Databases
+* [Notes on Distributed Databases](http://domino.research.ibm.com/library/cyberdig.nsf/papers/A776EC17FC2FCE73852579F100578964/$File/RJ2571.pdf)
+* [ Epidemic algorithms for replicated database maintenance](https://pdfs.semanticscholar.org/49ed/15db181c74c7067ec01800fb5392411c868c.pdf)
+* [Principles of Computer System Design, Chapter 10: Consistency](https://ocw.mit.edu/resources/res-6-004-principles-of-computer-system-design-an-introduction-spring-2009/online-textbook/part_ii_open_5_0.pdf)
 
 ## Blogs and other reading links
 * [What are some good resources for learning about distributed computing? Why?](https://www.quora.com/What-are-some-good-resources-for-learning-about-distributed-computing-Why)
