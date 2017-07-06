@@ -98,3 +98,5 @@ Chinese version [日志：每个软件工程师都应该知道的有关实时数
 ## reference
 * [awesome-distributed-systems](https://github.com/kevinxhuang/awesome-distributed-systems)
 * [service-discovery](https://technologyconversations.com/2015/09/08/service-discovery-zookeeper-vs-etcd-vs-consul/)
+* [flp](http://blog.csdn.net/chen77716/article/details/27963079)
+* [CAP理论](http://blog.csdn.net/chen77716/article/details/30635543)
