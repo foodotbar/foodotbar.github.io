@@ -25,7 +25,7 @@ Chinese version: [面向分布式系统工程师的分布式系统理论](http:/
 * [Distributed Systems - CMU fall2016](http://www.cs.cmu.edu/~srini/15-440/syllabus.html) in Go Programming Language
 * [Principles of Distributed Computing - ETHZ](http://dcg.ethz.ch/lectures/podc_allstars/)
 * [Distributed Systems for Information Systems Management - CMU](http://www.andrew.cmu.edu/course/95-702/)
-* [Distributed Systems - MIT](http://nil.csail.mit.edu/6.824/2017/)
+* [Distributed Systems - MIT](https://pdos.csail.mit.edu/6.824/schedule.html)
 * [Introduction to Distributed System Design - Google Code University](http://www.hpcs.cs.tsukuba.ac.jp/%7Etatebe/lecture/h23/dsys/dsd-tutorial.html)
 
 ## Papers
