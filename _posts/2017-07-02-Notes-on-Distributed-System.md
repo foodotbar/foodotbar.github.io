@@ -9,6 +9,7 @@ categories:
 ## Terms
 * [FLP Impossibility](https://groups.csail.mit.edu/tds/papers/Lynch/jacm85.pdf), Impossibility of Distributed Consensus with One Faulty Process
 * [CAP Theorem](http://en.wikipedia.org/wiki/CAP_theorem)
+* [BASE: An Acid Alternative](http://queue.acm.org/detail.cfm?id=1394128)
 * [Fallacies of Distributed Computing](https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing)
 * [Distributed systems theory for the distributed engineer](http://the-paper-trail.org/blog/distributed-systems-theory-for-the-distributed-systems-engineer/)   
 Chinese version: [面向分布式系统工程师的分布式系统理论](http://blog.xiayf.cn/2014/08/10/Distributed-systems-theory-for-the-distributed-systems-engineer/)
