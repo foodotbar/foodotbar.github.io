@@ -6,7 +6,7 @@ categories:
 ---
 
 ## the Linux Storage Stack Diagram
-![the Linux Storage Stack Diagram](https://www.thomas-krenn.com/de/wikiDE/images/e/e0/Linux-storage-stack-diagram_v4.10.png)
+[image - the Linux Storage Stack Diagram](https://www.thomas-krenn.com/de/wikiDE/images/e/e0/Linux-storage-stack-diagram_v4.10.png)
 
 ## Storage Devices related
 
