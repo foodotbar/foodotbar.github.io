@@ -5,10 +5,28 @@ categories:
 - blog
 ---
 
-# notes on storage 
+## the Linux Storage Stack Diagram
+![the Linux Storage Stack Diagram](https://www.thomas-krenn.com/de/wikiDE/images/e/e0/Linux-storage-stack-diagram_v4.10.png)
 
-## Bootcamp
-### Data Structure
+## Storage Devices related
+
+### Hardware
+* [Hard disk drive - HDD](https://en.wikipedia.org/wiki/Hard_disk_drive)
+* [Solid-state drive - SSD](https://en.wikipedia.org/wiki/Solid-state_drive)
+
+### Access and interfaces
+* [SCSI - Small Computer System Interface](https://en.wikipedia.org/wiki/SCSI)
+* [IDE - Integrated Drive Electronics / Parallel ATA](https://en.wikipedia.org/wiki/Parallel_ATA#IDE_and_ATA-1)
+* [FC - Fibre Channel](https://en.wikipedia.org/wiki/Fibre_Channel)
+* [SAS - Serial Attached SCSI](https://en.wikipedia.org/wiki/Serial_Attached_SCSI)
+* [SATA - Serial ATA](https://en.wikipedia.org/wiki/Serial_ATA)
+* [PCI Express](https://en.wikipedia.org/wiki/PCI_Express)
+* [USB](https://en.wikipedia.org/wiki/USB)
+* [ATAPI - ATA Packet Interface](https://en.wikipedia.org/wiki/ATA_Packet_Interface)
+* [AHCI - Advanced Host Controller Interface](https://en.wikipedia.org/wiki/Advanced_Host_Controller_Interface)
+* [NVMe - NVM Express](https://en.wikipedia.org/wiki/NVM_Express)
+
+## Data Structure
 * [B Tree](https://en.wikipedia.org/wiki/B-tree), implementation for Go [Google btree](https://github.com/google/btree), Original papers [Organization and Maintenance of Large Ordered Indices](http://www.minet.uni-jena.de/dbis/lehre/ws2005/dbs1/Bayer_hist.pdf) and [Binary B-trees for virtual memory](http://dl.acm.org/citation.cfm?id=1734731)
 * [B+ Tree](https://en.wikipedia.org/wiki/B%2B_tree), implementation for Go [B+ tree](https://github.com/timtadh/fs2/tree/master/bptree), by C++11 [B+ Tree](http://www.amittai.com/prose/bplustree_cpp.html)
 * [Merkle Tree](https://en.wikipedia.org/wiki/Merkle_tree), paper [Merkle Hash Tree based Techniques for Data Integrity of Outsourced Data](http://ceur-ws.org/Vol-1366/paper13.pdf)
@@ -38,6 +56,7 @@ categories:
 
 ## Courses
 
+## Conferences
 
 ## reference
 * [isc621-project](https://github.com/jdbeutel/ics621-proj)
