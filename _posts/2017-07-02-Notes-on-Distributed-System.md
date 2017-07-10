@@ -44,6 +44,7 @@ Chinese version: [面向分布式系统工程师的分布式系统理论](http:/
 ### Databases
 * [Spanner: Google’s Globally-Distributed Database](http://static.googleusercontent.com/media/research.google.com/zh-CN//archive/spanner-osdi2012.pdf)
 * [Tera - 高性能、可伸缩的结构化数据库](https://github.com/ty4z2008/Qix/blob/master/ds.md)
+* [Salt: Combining ACID and BASE in a Distributed Database](https://www.cs.utexas.edu/~lorenzo/papers/Chao14Salt.pdf)
 
 ### Resource Management
 * [Apache Hadoop YARN: Yet Another Resource Negotiator](https://www.sics.se/~amir/files/download/dic/2013%20-%20Apache%20Hadoop%20YARN:%20Yet%20Another%20Resource%20Negotiator%20\(SoCC\).pdf)
