@@ -26,6 +26,12 @@ categories:
 * [AHCI - Advanced Host Controller Interface](https://en.wikipedia.org/wiki/Advanced_Host_Controller_Interface)
 * [NVMe - NVM Express](https://en.wikipedia.org/wiki/NVM_Express)
 
+### Disk scheduling algorithms
+* [CFQ - Completely Fair Queuing](https://en.wikipedia.org/wiki/CFQ), 
+* [Deadline scheduler](https://en.wikipedia.org/wiki/Deadline_scheduler)
+* [Noop scheduler](https://en.wikipedia.org/wiki/Noop_scheduler)
+* [A Comprehensive Review for Disk Scheduling Algorithms](https://www.ijcsi.org/papers/IJCSI-11-1-1-74-79.pdf)
+
 ## Data Structure
 * [B Tree](https://en.wikipedia.org/wiki/B-tree), implementation for Go [Google btree](https://github.com/google/btree), Original papers [Organization and Maintenance of Large Ordered Indices](http://www.minet.uni-jena.de/dbis/lehre/ws2005/dbs1/Bayer_hist.pdf) and [Binary B-trees for virtual memory](http://dl.acm.org/citation.cfm?id=1734731)
 * [B+ Tree](https://en.wikipedia.org/wiki/B%2B_tree), implementation for Go [B+ tree](https://github.com/timtadh/fs2/tree/master/bptree), by C++11 [B+ Tree](http://www.amittai.com/prose/bplustree_cpp.html)
@@ -63,3 +69,6 @@ categories:
 
 ## reference
 * [isc621-project](https://github.com/jdbeutel/ics621-proj)
+* [kernel/doc/block](https://www.kernel.org/doc/Documentation/block/)
+* [RedHat - Storage and Filesystem](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Performance_Tuning_Guide/chap-Red_Hat_Enterprise_Linux-Performance_Tuning_Guide-Storage_and_File_Systems.html)
+* [What is the Future of Disk Drives, Death or Rebirth? ](https://www.researchgate.net/profile/Yuhui_Deng/publication/220566509_What_is_the_Future_of_Disk_Drives_Death_or_Rebirth/links/54d839890cf2464758199ddf/What-is-the-Future-of-Disk-Drives-Death-or-Rebirth.pdf)

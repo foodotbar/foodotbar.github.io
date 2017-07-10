@@ -6,7 +6,7 @@ categories:
 ---
 
 
-## Bootcamp
+## Terms
 * [FLP Impossibility](https://groups.csail.mit.edu/tds/papers/Lynch/jacm85.pdf), Impossibility of Distributed Consensus with One Faulty Process
 * [CAP Theorem](http://en.wikipedia.org/wiki/CAP_theorem)
 * [Fallacies of Distributed Computing](https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing)
