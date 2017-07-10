@@ -101,3 +101,4 @@ Chinese version [日志：每个软件工程师都应该知道的有关实时数
 * [service-discovery](https://technologyconversations.com/2015/09/08/service-discovery-zookeeper-vs-etcd-vs-consul/)
 * [flp](http://blog.csdn.net/chen77716/article/details/27963079)
 * [CAP理论](http://blog.csdn.net/chen77716/article/details/30635543)
+* [THE BASE METHODOLOGY VERSUS THE ACID MODEL](http://www.cs.cornell.edu/courses/cs5412/2012sp/slides/VIII%20-%20BASE%20versus%20ACID.pdf)
