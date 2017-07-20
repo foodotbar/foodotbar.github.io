@@ -67,11 +67,12 @@ Chinese version [日志：每个软件工程师都应该知道的有关实时数
 * [Paxos Made Simple](http://research.microsoft.com/en-us/um/people/lamport/pubs/paxos-simple.pdf), a more terse readable Paxos paper by Lamport himself.
 * [The Chubby Lock Service for loosely coupled distributed systems](http://static.googleusercontent.com/media/research.google.com/en//archive/chubby-osdi06.pdf)
 * [Paxos made live - An engineering perspective](http://research.google.com/archive/paxos_made_live.html)
+* [Using Paxos to Build a Scalable, Consistent, and Highly Available Datastore](https://arxiv.org/pdf/1103.2408.pdf)
 * [Raft Consensus Algorithm](https://raftconsensus.github.io/)
 * [Paxos vs Raft](https://ramcloud.stanford.edu/%7Eongaro/userstudy/)
 
 ### Service Discovery
-* [ZooKeeper](http://zookeeper.apache.org/)
+* [ZooKeeper](http://zookeeper.apache.org/), paper [Zab](https://docs.google.com/viewer?a=v&pid=sites&srcid=Y3MudXNmY2EuZWR1fGNzLTYzNi0yMDEzc3xneDo1OWE5NTY4MzZmMmJlNTEz)
 * [Eureka!](https://github.com/Netflix/eureka)
 * [Consul](https://www.consul.io/)
 * [etcd](https://github.com/coreos/etcd)

@@ -12,7 +12,7 @@ categories:
 
 ### Hardware
 * [Hard disk drive - HDD](https://en.wikipedia.org/wiki/Hard_disk_drive)
-* [Solid-state drive - SSD](https://en.wikipedia.org/wiki/Solid-state_drive)
+* [Solid-state drive - SSD](https://en.wikipedia.org/wiki/Solid-state_drive), [Write amplification](https://en.wikipedia.org/wiki/Write_amplification), [TRIM](https://en.wikipedia.org/wiki/Trim_(computing)), [Wear leveling](https://en.wikipedia.org/wiki/Wear_leveling)
 
 ### Access and interfaces
 * [SCSI - Small Computer System Interface](https://en.wikipedia.org/wiki/SCSI)
