@@ -28,18 +28,26 @@ Chinese version: [面向分布式系统工程师的分布式系统理论](http:/
 * [Distributed Systems - MIT](http://nil.csail.mit.edu/6.824/2015/)
 * [Introduction to Distributed System Design - Google Code University](http://www.hpcs.cs.tsukuba.ac.jp/%7Etatebe/lecture/h23/dsys/dsd-tutorial.html)
 
-## Papers
+## Papers & Implementations
 
 ### Storage
-* [Dynamo: Amazon's Highly Available Key Value Store](http://bnrg.eecs.berkeley.edu/%7Erandy/Courses/CS294.F07/Dynamo.pdf)
-* [Bigtable: A Distributed Storage System for Structured Data](http://static.googleusercontent.com/media/research.google.com/en//archive/bigtable-osdi06.pdf)
+
+##### Papers
 * [The Google File System](http://static.googleusercontent.com/external_content/untrusted_dlcp/research.google.com/en/us/archive/gfs-sosp2003.pdf)
+* [MapReduce: Simplified Data Processing on Large Clusters](http://research.google.com/archive/mapreduce.html)
+* [Bigtable: A Distributed Storage System for Structured Data](http://static.googleusercontent.com/media/research.google.com/en//archive/bigtable-osdi06.pdf)
+* [Dynamo: Amazon's Highly Available Key Value Store](http://bnrg.eecs.berkeley.edu/%7Erandy/Courses/CS294.F07/Dynamo.pdf)
 * [Cassandra: A Decentralized Structured Storage System](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.161.6751&rep=rep1&type=pdf)
 * [Availability in Globally Distributed Storage Systems](http://static.googleusercontent.com/media/research.google.com/en/us/pubs/archive/36737.pdf)
+* [Ceph: A Scalable, High-Performance Distributed File System](http://ceph.com/wp-content/uploads/2016/08/weil-ceph-osdi06.pdf)
 * [Sheepdog: Distributed Storage System for KVM](https://github.com/ty4z2008/Qix/blob/master/ds.md)
 * [PacificA: Replication in Log-Based Distributed Storage Systems](http://research.microsoft.com:8082/pubs/66814/tr-2008-25.pdf)
 * [Finding a needle in Haystack: Facebook’s photo storage](https://www.usenix.org/legacy/event/osdi10/tech/full_papers/Beaver.pdf)
 * [Windows Azure Storage: A Highly Available Cloud Storage Service with Strong Consistency](http://www-bcf.usc.edu/%7Eminlanyu/teach/csci599-fall12/papers/11-calder.pdf)
+
+##### Implementations
+* [Ceph](https://github.com/ceph/ceph)
+* [Sheepdog]()
 
 ### Databases
 * [Spanner: Google’s Globally-Distributed Database](http://static.googleusercontent.com/media/research.google.com/zh-CN//archive/spanner-osdi2012.pdf)
@@ -62,13 +70,20 @@ Chinese version: [面向分布式系统工程师的分布式系统理论](http:/
 Chinese version [日志：每个软件工程师都应该知道的有关实时数据的统一概念](http://www.oschina.net/translate/log-what-every-software-engineer-should-know-about-real-time-datas-unifying?lang=chs&page=1#)
 * [Kafka: a Distributed Messaging System for Log Processin](http://notes.stephenholiday.com/Kafka.pdf)
 
-### Distributed Consensus
+### Consensus Algorithms
+
+##### Papers
 * [The Part Time Parliament](http://research.microsoft.com/en-us/um/people/lamport/pubs/lamport-paxos.pdf), Lamport's original Paxos paper, but it's a bit difficult to understand.
 * [Paxos Made Simple](http://research.microsoft.com/en-us/um/people/lamport/pubs/paxos-simple.pdf), a more terse readable Paxos paper by Lamport himself.
-* [The Chubby Lock Service for loosely coupled distributed systems](http://static.googleusercontent.com/media/research.google.com/en//archive/chubby-osdi06.pdf)
+* [The Chubby Lock Service for loosely coupled distributed systems](http://static.googleusercontent.com/media/research.google.com/en//archive/chubby-osdi06.pdf), an Implementation of Fast-Paxos
 * [Paxos made live - An engineering perspective](http://research.google.com/archive/paxos_made_live.html)
 * [Raft Consensus Algorithm](https://raftconsensus.github.io/)
 * [Paxos vs Raft](https://ramcloud.stanford.edu/%7Eongaro/userstudy/)
+
+##### Implementations
+
+* [Apache ZooKeeper](http://zookeeper.apache.org/), ZooKeeper is a centralized service for maintaining configuration information, naming, providing distributed synchronization, and providing group services, an opensource Implementation of Google Chubby
+* [etcd](https://github.com/coreos/etcd), Distributed reliable key-value store for the most critical data of a distributed system based on Raft
 
 ### Others
 * [Time, Clocks, and the Ordering of Events in a Distributed System](http://research.microsoft.com/en-us/um/people/lamport/pubs/time-clocks.pdf)
