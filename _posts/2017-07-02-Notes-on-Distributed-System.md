@@ -70,13 +70,12 @@ Chinese version: [面向分布式系统工程师的分布式系统理论](http:/
 Chinese version [日志：每个软件工程师都应该知道的有关实时数据的统一概念](http://www.oschina.net/translate/log-what-every-software-engineer-should-know-about-real-time-datas-unifying?lang=chs&page=1#)
 * [Kafka: a Distributed Messaging System for Log Processin](http://notes.stephenholiday.com/Kafka.pdf)
 
-<<<<<<< HEAD:_posts/2017-07-02-Introduction-to-Distributed-System.md
 ### Consensus Algorithms
 
 ##### Papers
 =======
 ### Distributed Consensus Algorithms
->>>>>>> 2c13c2d1ce38b214eac6616ed7e1039a93ae4867:_posts/2017-07-02-Notes-on-Distributed-System.md
+
 * [The Part Time Parliament](http://research.microsoft.com/en-us/um/people/lamport/pubs/lamport-paxos.pdf), Lamport's original Paxos paper, but it's a bit difficult to understand.
 * [Paxos Made Simple](http://research.microsoft.com/en-us/um/people/lamport/pubs/paxos-simple.pdf), a more terse readable Paxos paper by Lamport himself.
 * [The Chubby Lock Service for loosely coupled distributed systems](http://static.googleusercontent.com/media/research.google.com/en//archive/chubby-osdi06.pdf), an Implementation of Fast-Paxos
@@ -85,7 +84,6 @@ Chinese version [日志：每个软件工程师都应该知道的有关实时数
 * [Raft Consensus Algorithm](https://raftconsensus.github.io/)
 * [Paxos vs Raft](https://ramcloud.stanford.edu/%7Eongaro/userstudy/)
 
-<<<<<<< HEAD:_posts/2017-07-02-Introduction-to-Distributed-System.md
 ##### Implementations
 
 * [Apache ZooKeeper](http://zookeeper.apache.org/), ZooKeeper is a centralized service for maintaining configuration information, naming, providing distributed synchronization, and providing group services, an opensource Implementation of Google Chubby
@@ -100,7 +98,7 @@ Chinese version [日志：每个软件工程师都应该知道的有关实时数
 * [etcd](https://github.com/coreos/etcd)
 
 ### Consistency and Ordering in Distributed Systems
->>>>>>> 2c13c2d1ce38b214eac6616ed7e1039a93ae4867:_posts/2017-07-02-Notes-on-Distributed-System.md
+
 * [Time, Clocks, and the Ordering of Events in a Distributed System](http://research.microsoft.com/en-us/um/people/lamport/pubs/time-clocks.pdf)
 * [The Byzantine Generals Problem](https://www.microsoft.com/en-us/research/publication/byzantine-generals-problem/)
 
